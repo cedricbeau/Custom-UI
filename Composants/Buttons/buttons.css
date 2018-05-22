@@ -1,0 +1,238 @@
+/* ----------------------------- */
+/* ---------- Buttons ---------- */
+/* ----------------------------- */
+:root {
+  --btn--padding: .375rem .75rem;
+
+  --btn--fontSize: 1em;
+  --btn--fontWeight: 400;
+  --btn--lineHeight: 1.5;
+
+  --btn--whiteSpace: nowrap;
+
+  --btn--textAlign: center;
+  --btn--textDecoration: none;
+
+  --btn--currentColor: currentColor;
+  --btn--color--white: #fff;
+  --btn--color--black: #000;
+  --btn--color--primary: #2196F3;
+  --btn--color--primary--hover: #1565C0;
+  --btn--color--secondary: #546E7A;
+  --btn--color--secondary--hover: #37474F;
+  --btn--color--light: #e5e5e5;
+  --btn--color--light--hover: #ccc;  
+  --btn--color--dark: #333;
+  --btn--color--dark--hover: #000;
+
+  --btn--borderWidth: 1px;
+  --btn--borderStyle: solid;
+  --btn--borderColor: transparent;
+
+  --btn--borderRadius: 2px;
+
+  --btn--animationDuration: .15s;
+  --btn--animationTimingFunction: ease-in-out;
+
+  --btn--cursor: pointer;
+
+  --btn-disabled--opacity: 0.6;
+  
+  --btn-toggle--color: #fff;
+  --btn-toggle--backgroundColor: #212121;
+  --btn-toggle--backgroundColor--on: #4CAF50;
+  --btn-toggle--backgroundColor--off: #f44336;
+  --btn-toggle--border: 15px solid #f2f2f2;
+}
+
+.btn {
+  display: inline-block;  
+  vertical-align: middle;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  
+  padding: var(--btn--padding);
+  font-size: var(--btn--fontSize);
+  font-weight: var(--btn--fontWeight);
+  line-height: var(--btn--lineHeight);
+  text-align: var(--btn--textAlign);
+  white-space: var(--btn--whiteSpace);
+
+  border: none;
+  border-radius: var(--btn--borderRadius);
+
+  transition: 
+    color var(--btn--animationDuration) var(--btn--animationTimingFunction),
+    background-color var(--btn--animationDuration) var(--btn--animationTimingFunction),
+    border-color var(--btn--animationDuration) var(--btn--animationTimingFunction),
+    box-shadow var(--btn--animationDuration) var(--btn--animationTimingFunction);
+
+  cursor: var(--btn--cursor);
+}
+
+.btn:focus,
+.btn:hover {
+  text-decoration: var(--btn--textDecoration);
+}
+
+/*
+** Pleins
+*/
+.btn-primary {
+  color: var(--btn--color--white);
+  background-color: var(--btn--color--primary);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--btn--color--primary--hover);
+}
+
+.btn-secondary {
+  color: var(--btn--color--white);
+  background-color: var(--btn--color--secondary);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background-color: var(--btn--color--secondary--hover);
+}
+
+.btn-light {
+  color: var(--btn--color--current);
+  background-color: var(--btn--color--light);
+}
+
+.btn-light:hover,
+.btn-light:focus {
+  background-color: var(--btn--color--light--hover);
+}
+
+.btn-dark {
+  color: var(--btn--color--white);
+  background-color: var(--btn--color--dark);
+}
+
+.btn-dark:hover,
+.btn-dark:focus {
+  background-color: var(--btn--color--dark--hover);
+}
+
+/*
+** Outline
+*/
+.btn[class*="btn-outline-"] {
+  border-width: var(--btn--borderWidth);
+  border-style: var(--btn--borderStyle);
+}
+
+.btn-outline-primary {
+  color: var(--btn--color--primary);
+  border-color:  var(--btn--color--primary);
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+  color: var(--btn--color--white);
+  background-color: var(--btn--color--primary);
+  border-color: var(--btn--color--primary--hover);
+}
+
+.btn-outline-secondary {
+  color: var(--btn--color--secondary);
+  border-color:  var(--btn--color--secondary);
+}
+
+.btn-outline-secondary:hover,
+.btn-outline-secondary:focus {
+  color: var(--btn--color--white);
+  background-color: var(--btn--color--secondary);
+  border-color: var(--btn--color--secondary--hover);
+}
+
+.btn-outline-light {
+  color: var(--btn--color--current);
+  border-color: var(--btn--color--light);
+}
+
+.btn-outline-light:hover,
+.btn-outline-light:focus {
+  color: var(--btn--color--current);
+  background-color: var(--btn--color--light);
+  border: var(--btn--borderWidth) var(--btn--borderStyle) var(--btn--color--light--hover);
+}
+
+.btn-outline-dark {
+  color: var(--btn--color--dark);
+  border-color: var(--btn--color--dark);
+}
+
+.btn-outline-dark:hover,
+.btn-outline-dark:focus {
+  color: var(--btn--color--white);
+  background-color: var(--btn--color--dark);
+  border: var(--btn--border--width) var(--btn--border--style) var(--btn--color--dark--hover);
+}
+
+/*
+** Disabled
+*/
+.btn-disabled {
+  opacity: var(--btn-disabled--opacity);
+  pointer-events: none;
+}
+
+/*
+** Toggle
+*/
+.btn-toggle {
+  position: relative;
+  overflow: hidden;
+  width: 60px;
+  height: 30px;
+  color: #fff;
+  background-color: var(--btn-toggle--backgroundColor);
+}
+
+.btn-toggle::before,
+.btn-toggle::after {
+  position: absolute;
+  top:2px;
+  bottom: 2px;
+  width: 56px;
+  transition: 
+    z-index var(--btn--animationDuration) var(--btn--animationTimingFunction),
+    transform var(--btn--animationDuration) var(--btn--animationTimingFunction);
+}
+
+.btn-toggle::after {  
+  z-index: -1;
+  content: 'ON';  
+  border-right: var(--btn-toggle--border);
+  transform: translateX(-69px);
+  background-color: var(--btn-toggle--backgroundColor--on);
+  box-shadow: inset -2px 1px 2px rgba(00,00,00,.15);
+}
+
+.btn-toggle::before { 
+  z-index: 2;
+  content: 'OFF';  
+  left: 2px;  
+  background-color: var(--btn-toggle--backgroundColor--off);
+  border-left: var(--btn-toggle--border);
+  box-shadow: inset 2px 1px 2px rgba(00,00,00,.25);
+  transform: translateX(0);
+}
+
+.btn-toggle.is-checked::before {
+  z-index: -1;
+  transform: translateX(41px);  
+}
+
+.btn-toggle.is-checked::after {
+  z-index: 2;
+  transform: translateX(-28px);
+}

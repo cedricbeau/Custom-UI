@@ -1,0 +1,150 @@
+<section class="content__section section">
+  <div class="section__header">
+    <h3 class="section__title h2">Elements</h3>
+  </div>
+  <div class="section__body">
+    <form class="form">
+      <div class="field">
+        <label for="nom">Nom</label>
+        <input type="text" name="nom" id="nom" pattern="[A-Za-z]{1,20}" title="Votre nom doit avoir entre 2 et 20 lettres" placeholder="Nom" required>
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Votre adresse mail doit contenir le symbole @..." placeholder="Email" required>
+      </div>
+      <div class="field">
+        <label for="password">Mot de passe</label>
+        <input type="password" name="password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Doit contenir au moins un chiffre et une lettre majuscule et minuscule, et au moins 8 caractères ou plus" placeholder="Mot de passe" required>
+      </div>
+      <div class="field field-inline">
+        <input type="checkbox" name="news" id="news">
+        <label for="news">Inscription à la newsletter</label>
+      </div>
+      <div class="field field-inline">
+        <input type="radio" name="sexe" id="homme">
+        <label for="homme">Homme</label>
+      </div>
+      <div class="field field-inline">
+        <input type="radio" name="sexe" id="femme">
+        <label for="femme">Femme</label>
+      </div>
+      <div class="field field-inline">
+        <input type="radio" name="sexe" id="neutre">
+        <label for="neutre">Neutre</label>
+      </div>
+      <div class="fields">
+        <div class="field field-inline">
+          <input type="radio" name="avis" id="oui">
+          <label for="oui">Oui</label>
+        </div>
+        <div class="field field-inline">
+          <input type="radio" name="avis" id="non">
+          <label for="non">Non</label>
+        </div>
+        <div class="field field-inline">
+          <input type="radio" name="avis" id="nesaispas">
+          <label for="nesaispas">Ne sais pas</label>
+        </div>
+      </div>      
+      <div class="field field-inline">
+        <label for="select">Séléctionnez un chiffre entre 1  et 4</label>
+        <select name="select" id="select">
+          <option value="1" selected>1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" cols="30" rows="10" placeholder="Votre message..." required></textarea>
+      </div>
+      <div class="field">
+        <label for="file">Séléctionnez un fichier</label>
+        <input type="file" name="file" id="file">
+      </div>      
+      <div class="field field-inline">
+        <button type="submit" class="submit">Valider</button>
+      </div>      
+    </form>
+  </div>
+  <div class="section_footer">
+    <div class="code">
+      <h4 class="code__title">Code HTML</h4>
+      <div class="code__clipboard">
+        <button class="btn-clipboard">Copier</button>
+      </div>
+      <textarea class="code_snippet">
+<form class="form">
+  <div class="field">
+    <label for="nom">Nom</label>
+    <input type="text" name="nom" id="nom" pattern="[A-Za-z]{1,20}" title="Votre nom doit avoir entre 2 et 20 lettres" placeholder="Nom" required>
+  </div>
+  <div class="field">
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Votre adresse mail doit contenir le symbole @..." placeholder="Email" required>
+  </div>
+  <div class="field">
+    <label for="password">Mot de passe</label>
+    <input type="password" name="password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Doit contenir au moins un chiffre et une lettre majuscule et minuscule, et au moins 8 caractères ou plus" placeholder="Mot de passe" required>
+  </div>
+  <div class="field field-inline">
+    <input type="checkbox" name="news" id="news">
+    <label for="news">Inscription à la newsletter</label>
+  </div>
+  <div class="field field-inline">
+    <input type="radio" name="sexe" id="homme">
+    <label for="homme">Homme</label>
+  </div>
+  <div class="field field-inline">
+    <input type="radio" name="sexe" id="femme">
+    <label for="femme">Femme</label>
+  </div>
+  <div class="field field-inline">
+    <input type="radio" name="sexe" id="neutre">
+    <label for="neutre">Neutre</label>
+  </div>
+  <div class="fields">
+    <div class="field field-inline">
+      <input type="radio" name="avis" id="oui">
+      <label for="oui">Oui</label>
+    </div>
+    <div class="field field-inline">
+      <input type="radio" name="avis" id="non">
+      <label for="non">Non</label>
+    </div>
+    <div class="field field-inline">
+      <input type="radio" name="avis" id="nesaispas">
+      <label for="nesaispas">Ne sais pas</label>
+    </div>
+  </div>      
+  <div class="field field-inline">
+    <label for="select">Séléctionnez un chiffre entre 1  et 4</label>
+    <select name="select" id="select">
+      <option value="1" selected>1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </select>
+  </div>
+  <div class="field">
+    <label for="message">Message</label>
+    <!-- Modifier testarea -> textarea -->
+    <!-- Conflit avec codeMirror -->
+    <testarea id="message" name="message" cols="30" rows="10" placeholder="Votre message..." required></testarea>
+  </div>
+  <div class="field">
+    <label for="file">Séléctionnez un fichier</label>
+    <input type="file" name="file" id="file">
+  </div>      
+  <div class="field field-inline">
+    <button type="submit" class="submit">Valider</button>
+  </div>      
+</form>
+      </textarea>
+    </div>
+    <div class="section__footer__links">
+      <a href="Composants/Forms/forms.css" class="footer__link">Télécharger le fichier CSS</a>
+    </div>
+  </div>
+</section>

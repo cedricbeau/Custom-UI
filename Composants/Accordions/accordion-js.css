@@ -1,0 +1,85 @@
+/* ---------------------------------- */
+/* ---------- Accordion JS ---------- */
+/* ---------------------------------- */
+:root {
+  --js-accordion__panel--marginTop: 5px;
+  --js-accordion__panel__content--selected--padding: 1em;
+
+  --js-accordion--borderWidth: 1px;
+  --js-accordion--borderStyle: solid;
+  --js-accordion--borderColor: #e5e5e5;
+  --js-accordion--border:
+    var(--js-accordion--borderWidth)
+    var(--js-accordion--borderStyle)
+    var(--js-accordion--borderColor);
+
+  --js-accordion__panel__title--padding: 0 0 0 1em;
+  --js-accordion__panel__title--margin: 0;
+  --js-accordion__panel__title--fontSize: 1em;
+  --js-accordion__panel__title--lineHeight: 3;
+  --js-accordion__panel__title--fontWeight: 400;
+  --js-accordion__panel__title--color: #333;  
+  --js-accordion__panel__title--backgroundColor: #eee;
+
+  --js-accordion__panel__title--color--selected: #eee;
+  --js-accordion__panel__title--backgroundColor--selected: #333;
+
+  --js-accordion__panel__title--cursor: pointer;
+
+  --js-accordion--transitionDuration: 0.4s;
+
+}
+
+.js-accordion__panel {
+  border: var(--js-accordion--border);
+}
+.js-accordion__panel + .js-accordion__panel {
+  margin-top: var(--js-accordion__panel--marginTop);
+}
+
+.js-accordion__panel__content {
+  height: 0;
+  overflow: hidden;
+  transition: height var(--js-accordion--transitionDuration);
+}
+
+.js-accordion__panel__content.is-selected {
+  overflow: auto;
+  padding: var(--js-accordion__panel__content--selected--padding);
+}
+
+.js-accordion__panel__title{
+  position: relative;
+  padding: var(--js-accordion__panel__title--padding);
+  margin: var(--js-accordion__panel__title--margin);
+  font-size: var(--js-accordion__panel__title--fontSize);
+  line-height: var(--js-accordion__panel__title--lineHeight);
+  font-weight: var(--js-accordion__panel__title--fontWeight);
+  color: var(--js-accordion__panel__title--color);
+  background:var(--js-accordion__panel__title--backgroundColor);
+  cursor: var(--js-accordion__panel__title--cursor);  
+  transition: background var(--js-accordion--transitionDuration);
+}
+
+.js-accordion__panel__title.is-selected {
+  color: var(--js-accordion__panel__title--color--selected);
+  background: var(--js-accordion__panel__title--backgroundColor--selected);
+}
+
+/* Icon */
+.js-accordion__panel__title::after {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+  width: 3em;
+  height: 3em;
+  content: "\25BC";
+  text-align: center;
+  -webkit-transition: transform var(--js-accordion--transitionDuration);
+          transition: transform var(--js-accordion--transitionDuration);
+}
+
+.js-accordion__panel__title.is-selected::after {
+  transform: rotateX(180deg);
+}

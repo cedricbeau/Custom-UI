@@ -1,0 +1,248 @@
+/* ------------------------------ */
+/* ---------- Tooltips ---------- */
+/* ------------------------------ */
+
+:root {
+  --tooltip--padding: 0.625em 1.5em;
+  --tooltip--color: inherit;
+  --tooltip--backgroundColor: #e5e5e5;
+  --tooltip--backgroundColor--hover: #d4d4d4;
+  --tooltip--border: none;
+  --tooltip--borderRadius: 2px;
+}
+
+.tooltip {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  padding: var(--tooltip--padding);
+  color: var(--tooltip--color);
+  background: var(--tooltip--backgroundColor);
+  border: var(--tooltip--border);
+  border-radius: var(--tooltip--borderRadius);
+  cursor: pointer;
+  transition: background 0.4s;
+}
+
+.tooltip:hover {
+  background: var(--tooltip--backgroundColor--hover);
+}
+
+/*
+** ::before & ::after
+*/
+
+.tooltip::after,
+.tooltip::before {
+  --tooltip--padding: 0.5em 0.625em 0.65em 0.625em;
+  --tooltip--fontSize: 85%;
+  --tooltip--color: #fff;
+  --tooltip--backgroundColor: #141414;
+  --tooltip--border: 6px solid transparent;
+  --tooltip--borderRadius: 2px;
+  position: absolute;
+  z-index: -999;
+  background-color: var(--tooltip--backgroundColor);
+  pointer-events: none;
+  opacity: 0;
+  transition: all 0.4s;
+}
+
+.tooltip::after {  
+  width: 100%;
+  padding: var(--tooltip--padding);
+  content: attr(aria-label);
+  font-size: var(--tooltip--fontSize);
+  color: var(--tooltip--color);
+  border-radius: var(--tooltip--borderRadius);  
+}
+
+.tooltip::before {
+  content: '';  
+  background: 0 0;
+  border: var(--tooltip--border);  
+}
+
+.tooltip:hover::before,
+.tooltip:hover::after {
+  z-index: 2;
+  opacity: 1;
+}
+
+/* ----------------------------- */
+/* ----- Tooltips Position ----- */
+/* ----------------------------- */
+/*
+** top & bottom
+*/
+[tooltip-position="top"]::after,
+[tooltip-position="bottom"]::after {
+  left: 0;
+}
+[tooltip-position="top"]::before,
+[tooltip-position="bottom"]::before{
+  left: calc(50% - 6px);
+}
+[tooltip-position="top"]::before {
+  border-top-color: var(--tooltip--backgroundColor);
+}
+[tooltip-position="bottom"]::before {
+  border-bottom-color: var(--tooltip--backgroundColor);
+}
+
+/*
+** right & left
+*/
+[tooltip-position="right"]::after,
+[tooltip-position="left"]::after {
+  top: 0;
+}
+[tooltip-position="right"]::before,
+[tooltip-position="left"]::before {
+  top: calc(50% - 0.625em);
+}
+[tooltip-position="right"]::before {
+  border-right-color: var(--tooltip--backgroundColor);
+}
+[tooltip-position="left"]::before {
+  border-left-color: var(--tooltip--backgroundColor);
+}
+
+/* ------------------------------ */
+/* ----- Tooltips Animation ----- */
+/* ------------------------------ */
+/* ---------- */
+/* -- Down -- */
+/* ---------- */
+[tooltip-animation="down"] {
+  --tooltip--position--from: -20px;
+  --tooltip--position--to: -5px;
+}
+/* Top */
+/* After */
+[tooltip-position="top"][tooltip-animation="down"]::after{
+  bottom:calc(100% + 20px);
+}
+[tooltip-position="top"][tooltip-animation="down"]:hover::after {
+  bottom:calc(100% + 5px);
+}
+/* Before */
+[tooltip-position="top"][tooltip-animation="down"]::before {
+  top:var(--tooltip--position--from);  
+}
+[tooltip-position="top"][tooltip-animation="down"]:hover::before {
+  top:var(--tooltip--position--to);  
+}
+/* Bottom */
+/* After */
+[tooltip-position="bottom"][tooltip-animation="down"]::after{
+  top:calc(100% + 20px);  
+}
+[tooltip-position="bottom"][tooltip-animation="down"]:hover::after {
+  top:calc(100% + 5px);
+}
+/* Before */
+[tooltip-position="bottom"][tooltip-animation="down"]::before {
+  bottom:var(--tooltip--position--from); 
+}
+[tooltip-position="bottom"][tooltip-animation="down"]:hover::before {
+  bottom:var(--tooltip--position--to);
+}
+/* Right */
+/* After */
+[tooltip-position="right"][tooltip-animation="down"]::after {
+  left:calc(100% + 20px);  
+}
+[tooltip-position="right"][tooltip-animation="down"]:hover::after {
+  left:calc(100% + 5px);
+}
+/* Before */
+[tooltip-position="right"][tooltip-animation="down"]::before {
+  right:var(--tooltip--position--from);
+}
+[tooltip-position="right"][tooltip-animation="down"]:hover::before {
+  right:var(--tooltip--position--to);
+}
+/* Left */
+/* After */
+[tooltip-position="left"][tooltip-animation="down"]::after {
+  left:calc(-100% - 20px );  
+}
+[tooltip-position="left"][tooltip-animation="down"]:hover::after {
+  left:calc(-100% - 5px );
+}
+/* Before */
+[tooltip-position="left"][tooltip-animation="down"]::before {
+  left:var(--tooltip--position--from);
+}
+[tooltip-position="left"][tooltip-animation="down"]:hover::before {
+  left:var(--tooltip--position--to);
+}
+
+/* -------- */
+/* -- Up -- */
+/* -------- */
+[tooltip-animation="up"] {
+  --tooltip--position--from: 0;
+  --tooltip--position--to: -10px;
+}
+/* Top */
+/* After */
+[tooltip-position="top"][tooltip-animation="up"]::after{
+  bottom:100%;
+}
+[tooltip-position="top"][tooltip-animation="up"]:hover::after {
+  bottom:calc(100% + 10px);
+}
+/* Before */
+[tooltip-position="top"][tooltip-animation="up"]::before {
+  top:var(--tooltip--position--from);  
+}
+[tooltip-position="top"][tooltip-animation="up"]:hover::before {
+  top:var(--tooltip--position--to);  
+}
+/* Bottom */
+/* After */
+[tooltip-position="bottom"][tooltip-animation="up"]::after{
+  top:100%;  
+}
+[tooltip-position="bottom"][tooltip-animation="up"]:hover::after {
+  top:calc(100% + 10px);
+}
+/* Before */
+[tooltip-position="bottom"][tooltip-animation="up"]::before {
+  bottom:var(--tooltip--position--from); 
+}
+[tooltip-position="bottom"][tooltip-animation="up"]:hover::before {
+  bottom:var(--tooltip--position--to);
+}
+/* Right */
+/* After */
+[tooltip-position="right"][tooltip-animation="up"]::after {
+  left:100%;  
+}
+[tooltip-position="right"][tooltip-animation="up"]:hover::after {
+  left:calc(100% + 10px);
+}
+/* Before */
+[tooltip-position="right"][tooltip-animation="up"]::before {
+  right:var(--tooltip--position--from);
+}
+[tooltip-position="right"][tooltip-animation="up"]:hover::before {
+  right:var(--tooltip--position--to);
+}
+/* Left */
+/* After */
+[tooltip-position="left"][tooltip-animation="up"]::after {
+  left:-100%;  
+}
+[tooltip-position="left"][tooltip-animation="up"]:hover::after {
+  left:calc(-100% - 10px);
+}
+/* Before */
+[tooltip-position="left"][tooltip-animation="up"]::before {
+  left:var(--tooltip--position--from);
+}
+[tooltip-position="left"][tooltip-animation="up"]:hover::before {
+  left:var(--tooltip--position--to);
+}

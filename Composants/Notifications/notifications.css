@@ -1,0 +1,113 @@
+/* ----------------------------------- */
+/* ---------- Notifications ---------- */
+/* ----------------------------------- */
+
+:root {
+  --notification--positionX: 0;
+  --notification--positionY: 0;
+  --notification--width: 300px;
+  --notification--padding: 1em;
+  --notification--background: #fff;
+  --notification--borderWidth: 1px;
+  --notification--borderStyle: solid;
+  --notification--borderColor: #e5e5e5;
+  --notification--border: 
+    var(--notification--borderWidth)
+    var(--notification--borderStyle)
+    var(--notification--borderColor);
+  --notification--borderRadius: 4px;
+  --notification--boxShadow: 0 0 40px rgba(00,00,00,0.15);
+  --notification--close--btn--fontSize:1.5em;
+}
+
+.notification {
+  display: none;
+  position: absolute;
+  z-index: 999;
+  width: var(--notification--width);
+  padding: var(--notification--padding);
+  background: var(--notification--background);
+  border: var(--notification--border);
+  border-radius: var(--notification--borderRadius);
+  box-shadow: var(--notification--boxShadow);
+}
+
+@keyframes appear {
+  0%{
+    filter: opacity(0);
+    transform: scale(0);
+  }
+  50% {
+    filter: opacity(0.5);
+    transform: scale(1.2);
+  }
+  100% {
+    filter: opacity(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes disappear {  
+  0% {
+    filter: opacity(1);
+    transform: scale(1);
+  }
+  50% {
+    filter: opacity(0.5);
+    transform: scale(1.2);
+  }
+  100%{
+    filter: opacity(0);
+    transform: scale(0);
+  }
+}
+
+.notification.is-open {
+  display: block;
+  animation: appear 0.6s ease-in-out;
+}
+
+.notification.is-closed {  
+  animation: disappear 0.6s ease-in-out;
+}
+
+.notification-top-left {
+  top: var(--notification--positionY);
+  left: var(--notification--positionX);
+}
+
+.notification-top-right {
+  top: var(--notification--positionY);
+  right: var(--notification--positionX);
+}
+
+.notification-bottom-left {
+  bottom: var(--notification--positionY);
+  left: var(--notification--positionX);
+}
+
+.notification-bottom-right {
+  bottom: var(--notification--positionY);
+  right: var(--notification--positionX);
+}
+
+.notification__close {
+  text-align: right;
+}
+
+.notification__close__btn {
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.notification__close__btn span {
+  display: inline-block;
+  font-size: var(--notification--close--btn--fontSize);
+  line-height: 1;
+}
+
+.notification__content p {
+  margin: 0;
+}

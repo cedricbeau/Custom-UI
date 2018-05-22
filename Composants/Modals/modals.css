@@ -1,0 +1,172 @@
+/* ---------------------------- */
+/* ---------- Modals ---------- */
+/* ---------------------------- */
+
+:root {
+  --modal--padding: 1em;
+  --modal--backgroundColor: rgba(00,00,00,0.5);
+  --modal--tansitionDuration: 0.4s;
+  --modal__dialog--width: 500px;
+  --modal__dialog--backgroundColor: #fff;
+  --modal__dialog--borderWidth: 1px;
+  --modal__dialog--borderStyle: solid;
+  --modal__dialog--borderColor: #e5e5e5;
+  --modal__dialog--border:
+    var(--modal__dialog--borderWidth)    
+    var(--modal__dialog--borderStyle)
+    var(--modal__dialog--borderColor);
+  --modal__dialog--borderRadius: .25rem;
+  --modal__dialog--boxShadow: 2px 2px 4px rgba(00,00,00,0.35);
+  --modal__dialog--positionTop: 2em;
+  --modal__dialog--positionLeft: 50%;
+  --modal__dialog--animationFrom: translate(-50%, -50vh);
+  --modal__dialog--animationTo: translate(-50%, var(--modal__dialog--positionTop));
+
+  --btn--padding: .375rem .75rem;
+  --btn--fontSize: 1em;
+  --btn--fontWeight: 400;
+  --btn--lineHeight: 1.5;
+  --btn--whiteSpace: nowrap;
+  --btn--textAlign: center;
+  --btn--textDecoration: none;
+  --btn--currentColor: currentColor;
+  --btn--color--white: #fff;
+  --btn--color--black: #000;
+  --btn--borderWidth: 1px;
+  --btn--borderStyle: solid;
+  --btn--borderColor: transparent;
+  --btn--borderRadius: 2px;
+  --btn--animationDuration: .15s;
+  --btn--animationTimingFunction: ease-in-out;
+  --btn--cursor: pointer; 
+}
+
+/* Ajouter class sur le body */
+.has-modal {
+  overflow: hidden;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  overflow: hidden;
+  outline: 0;  
+  transition: background-color var(--modal--tansitionDuration);
+}
+
+@keyframes bgColor {
+  from {
+    background-color: rgba(00,00,00,00);
+  }
+  to {
+    background-color: rgba(00,00,00,0.5);
+  }
+}
+
+@keyframes moove {
+  from {
+    transform:var(--modal__dialog--animationFrom);
+  }
+  to {
+    transform:var(--modal__dialog--animationTo);
+  }
+}
+
+.modal.is-open {
+  display: block;
+  overflow-x: hidden;
+  overflow-y: auto;  
+  background-color: var(--modal--backgroundColor);
+  animation: bgColor 0.4s;
+  transition: background-color var(--modal--tansitionDuration);
+}
+
+.modal__dialog {
+  position: relative;
+  width:var(--modal__dialog--width);
+  left: var(--modal__dialog--positionLeft);
+  top: var(--modal__dialog--positionTop);
+  transform: var(--modal__dialog--animationFrom);  
+  z-index: 1001;
+  background-color: var(--modal__dialog--backgroundColor);
+  border: var(--modal__dialog--border);
+  border-radius: var( --modal__dialog--borderRadius);
+  box-shadow: var(--modal__dialog--boxShadow);
+  transition: transform var(--modal--tansitionDuration);
+}
+
+.modal.is-open .modal__dialog {
+  transform:var(--modal__dialog--animationTo);
+  animation: moove 0.6s;
+}
+
+.modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--modal--padding);
+  border-bottom: var(--modal__dialog--border);
+}
+
+.modal__title {
+  margin: 0;
+  font-size: 1em;
+}
+
+.modal__body {
+  padding: var(--modal--padding);
+}
+
+.modal__footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: var(--modal--padding);
+  border-top: var(--modal__dialog--border);
+}
+
+.btn {
+  display: inline-block;  
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;  
+  padding: var(--btn--padding);
+  font-size: var(--btn--fontSize);
+  font-weight: var(--btn--fontWeight);
+  line-height: var(--btn--lineHeight);
+  text-align: var(--btn--textAlign);
+  white-space: var(--btn--whiteSpace);
+  border: none;
+  border-radius: var(--btn--borderRadius);
+  transition: 
+    color var(--btn--animationDuration) var(--btn--animationTimingFunction),
+    background-color var(--btn--animationDuration) var(--btn--animationTimingFunction),
+    border-color var(--btn--animationDuration) var(--btn--animationTimingFunction),
+    box-shadow var(--btn--animationDuration) var(--btn--animationTimingFunction);
+  cursor: var(--btn--cursor);
+}
+
+.btn:focus,
+.btn:hover {
+  text-decoration: var(--btn--textDecoration);
+}
+
+.modal__header>.btn {  
+  --btn--padding: 0;
+  position: relative;
+  height: 24px;
+  width: 24px;
+}
+.modal__header>.btn>span{
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -14px);
+}

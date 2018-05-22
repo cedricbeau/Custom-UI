@@ -1,0 +1,97 @@
+/* ------------------------------ */
+/* ---------- Tabs CSS ---------- */
+/* ------------------------------ */
+:root {
+  --tab__link--padding: .625em 1em;
+  --tab__link--color: #1E88E5;
+  --tab__link--color--hover: #0D47A1;
+  --tab--backgroundColor: #FFF;
+  --tab--borderWidth: 1px;
+  --tab--borderStyle: solid;
+  --tab--borderColor: #e5e5e5;
+  --tab--border:
+  var(--tab--borderWidth)
+  var(--tab--borderStyle)
+  var(--tab--borderColor);
+  --tab--borderRadius: 2px;
+  --tab__content--padding: 1em;
+}
+
+.css-tab__nav {
+  padding: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+}
+
+.css-tab-horizontale {
+  display:flex;
+  flex-wrap: wrap;
+}
+
+.css-tab__link{
+  display: block;
+  padding: var(--tab__link--padding);
+  color: var(--tab__link--color);
+  cursor: pointer;
+  transition: color 0.4s;
+  border-top-right-radius: var(--tab--borderRadius);
+  border-top-left-radius: var(--tab--borderRadius);
+}
+
+#css-tab1:checked ~ .css-tab__content {
+  border-top-left-radius: 0;
+}
+
+.css-tab__link:hover {
+  color: var(--tab__link--color--hover);
+}
+
+#css-tab1:checked ~ .css-tab__nav .css-tab1 label,
+#css-tab2:checked ~ .css-tab__nav .css-tab2 label,
+#css-tab3:checked ~ .css-tab__nav .css-tab3 label,
+#css-tab4:checked ~ .css-tab__nav .css-tab4 label {
+  background-color: var(--tab--backgroundColor);
+  border-top: var(--tab--border);
+  border-right: var(--tab--border);
+  border-left:var(--tab--border);
+}
+
+.css-tab__content {
+  padding: var(--tab__content--padding);
+  margin-top: -1px;
+  background-color: var(--tab--backgroundColor);
+  border: var(--tab--border);
+  border-radius: var(--tab--borderRadius);
+}
+
+.css-tab>input,
+.css-tab__panel {
+  display:none;
+}
+
+@keyframes fade {
+  from{
+    opacity:0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+.css-tab__panel>* {
+  animation: fade 1s;
+}
+
+#css-tab1:checked ~ .css-tab__content .css-tab1,
+#css-tab2:checked ~ .css-tab__content .css-tab2,
+#css-tab3:checked ~ .css-tab__content .css-tab3,
+#css-tab4:checked ~ .css-tab__content .css-tab4 {
+  display: block;
+}
+
+#css-tab1:checked ~ .css-tab__content .css-tab1>*,
+#css-tab2:checked ~ .css-tab__content .css-tab2>*,
+#css-tab3:checked ~ .css-tab__content .css-tab3>*,
+#css-tab4:checked ~ .css-tab__content .css-tab4>* {
+  opacity: 1;  
+}

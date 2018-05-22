@@ -1,0 +1,142 @@
+/* --------------------------- */
+/* ---------- Cards ---------- */
+/* --------------------------- */
+
+:root {
+  --card--width: 20em;
+  --card--backgroundColor: #fff;
+
+  --card--borderWidth: 1px;
+  --card--borderStyle: solid;
+  --card--borderColor: rgba(0,0,0,.125);
+  --card--border:
+    var(--card--borderWidth)
+    var(--card--borderStyle)
+    var(--card--borderColor);
+
+  --card--borderRadius: .25rem;
+
+  --card--boxShadow: 0 0 20px rgba(00,00,00, 0.15);
+
+  --card__header--padding: .75rem 1.25rem;
+  --card__header--backgroundColor: rgba(0,0,0,.03);
+  --card__header--border: var(--card--border);
+
+  --card__footer--padding: .75rem 1.25rem;
+  --card__footer--backgroundColor: rgba(0,0,0,.03);
+  --card__footer--border: var(--card--border);
+
+  --card__body--padding: 1.25rem;
+  --card__body--lineHeight: 1.5;
+
+  --card__img--width: 100%;
+  --card__img--height: auto;
+
+  --card-columns--columnCount: 1;
+  --card-columns--columnGap: 1em;
+  --card-columns__card--width: 100%;
+
+  --card-group__card--number: 3;
+  --card-group__card--width: calc(100% / var(--card-group__card--number));
+
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: var(--card--width);  
+  word-wrap: break-word;
+  background-color: var(--card--backgroundColor);
+  background-clip: border-box;
+  border: var(--card--border);
+  border-radius: var(--card--borderRadius);
+  box-shadow: var(--card--boxShadow);
+}
+
+.card__img {
+  width: var(--card__img--width);
+  height: var(--card__img--height);
+}
+
+.card__header,
+.card__body,
+.card__footer {
+  flex: 1 1 auto;  
+}
+
+.card__header,
+.card__footer {
+  padding: var(--card__header--padding);
+  background-color: var(--card__header--backgroundColor);
+}
+
+.card__body {
+  padding: var(--card__body--padding);
+  line-height: var(--card__body--lineHeight);
+}
+
+.card__header {  
+  border-bottom: var(--card__header--border);
+}
+
+.card__footer {
+  border-top: var(--card__footer--border);
+}
+
+/*
+** Card Columns
+*/
+.card-columns {
+  column-count: var(--card-columns--columnCount);
+  column-gap: var(--card-columns--columnGap);
+}
+
+.card-columns .card {
+  display: inline-block;
+  width: var(--card-columns__card--width);
+  margin-bottom: var(--card-columns--columnGap);
+}
+
+@media only screen and (min-width: 572px) {
+  .card-columns {
+    --card-columns--columnCount: 2;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .card-columns {
+    --card-columns--columnCount: 3;
+  }
+}
+
+/*
+** Card Group
+*/
+
+.card-group {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-group .card {
+  width: var(--card-group__card--width);  
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.card-group .card:first-of-type {
+  border-top-left-radius:var(--card--borderRadius);
+  border-bottom-left-radius:var(--card--borderRadius);
+}
+
+.card-group .card:last-of-type {
+  border-top-right-radius: var(--card--borderRadius);
+  border-bottom-right-radius: var(--card--borderRadius);
+}
+
+.card-group .card + .card {
+  border-left-width: 0;
+}

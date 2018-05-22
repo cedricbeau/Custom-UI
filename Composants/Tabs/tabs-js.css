@@ -1,0 +1,78 @@
+/* ----------------------------- */
+/* ---------- Tabs-js ---------- */
+/* ----------------------------- */
+:root {
+  --tab__link--padding: .625em 1em;
+  --tab__link--color: #1E88E5;
+  --tab__link--color--hover: #0D47A1;
+  --tab--backgroundColor: #FFF;
+  --tab--borderWidth: 1px;
+  --tab--borderStyle: solid;
+  --tab--borderColor: #e5e5e5;
+  --tab--border:
+  var(--tab--borderWidth)
+  var(--tab--borderStyle)
+  var(--tab--borderColor);
+  --tab--borderRadius: 2px;
+  --tab__content--padding: 1em;
+}
+
+.js-tab__nav{
+  padding: 0;
+  margin:0;
+  list-style-type: none;
+}
+
+.js-tab-horizontale {
+  display:flex;
+  flex-wrap: wrap;
+}
+
+.js-tab__nav__item {
+  padding: var(--tab__link--padding);
+  color: var(--link--color);
+  cursor: pointer;
+}
+
+.js-tab__nav__item:hover {
+  color: var(--link--color--hover);
+}
+
+.js-tab__nav__item.is-selected {
+  background-color: #fff;
+  border-top: var(--tab--border);
+  border-right: var(--tab--border);
+  border-left: var(--tab--border);
+}
+
+.js-tab__content {
+  padding: var(--tab__content--padding);
+  margin-top: -1px;
+  background-color: var(--tab--backgroundColor);
+  border: var(--tab--border);
+}
+
+.js-tab__panel{
+  display:none;
+}
+
+.js-tab__panel > *{
+  animation: opacity 1s;
+}
+
+@keyframes opacity {
+  from{
+    opacity:0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+.js-tab__panel.is-selected {
+  display:block;  
+}
+
+.js-tab__panel.is-selected > *{
+  opacity: 1;  
+}

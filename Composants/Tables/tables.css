@@ -1,0 +1,72 @@
+/* ---------------------------- */
+/* ---------- Tables ---------- */
+/* ---------------------------- */
+:root {
+  --table__cell--padding: .75em;
+  --table__head--fontWeight: 600;
+  --table-dark--color: #e5e5e5;
+  --table-dark--backgroundColor: #333;
+  --table--borderWidth: 1px;
+  --table--borderStyle: solid;
+  --table--borderColor: #e5e5e5;
+  --table--border:
+    var(--table--borderWidth)
+    var(--table--borderStyle)
+    var(--table--borderColor);
+  --table-striped--backgroundColor: rgba(00,00,00,0.05);
+  --table-dark-striped--backgroundColor: rgba(255,255,255,.15);
+}
+/*
+** Default
+*/
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: var(--table__cell--padding);
+  text-align: inherit;
+  border-top: var(--table--border);
+}
+
+.table__head  th {
+  --table--borderWidth: 2px;
+  --table__head--borderBottom: var(--table--borderWidth) var(--table--borderStyle) var(--table--borderColor);
+  vertical-align: bottom;
+  font-weight: var(--table__head--fontWeight);
+  border-bottom: var(--table__head--borderBottom);
+}
+/*
+** Dark
+*/
+.table-dark,
+.table__head-dark th {
+  color: var(--table-dark--color);
+  background-color: var(--table-dark--backgroundColor);
+}
+
+/*
+** Striped
+*/
+.table__body-striped tr:nth-of-type(2n+1){
+  background-color: var(--table-striped--backgroundColor);
+}
+/*
+** Dark Striped
+*/
+.table-dark .table__body-striped tr:nth-of-type(2n+1){
+  background-color: var(--table-dark-striped--backgroundColor);
+}
+/*
+** Bordered
+*/
+.table-border {
+  border: var(--table--border);
+}
+
+.table-border .table__head th + th,
+.table-border .table__body td  {
+  border-left: var(--table--border);
+}

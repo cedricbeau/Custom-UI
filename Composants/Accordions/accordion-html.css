@@ -1,0 +1,46 @@
+/* ------------------------------------ */
+/* ---------- Accordion HTML ---------- */
+/* ------------------------------------ */
+:root {
+
+  --html-accordion__details--width: 100%;
+  --html-accordion__details--marginBottom: 5px;
+
+  --html-accordion__details--borderWidth: 1px;
+  --html-accordion__details--borderStyle: solid;
+  --html-accordion__details--borderColor: #e5e5e5;
+  --html-accordion__details--border:
+    var(--html-accordion__details--borderWidth)
+    var(--html-accordion__details--borderStyle)
+    var(--html-accordion__details--borderColor);
+
+  --html-accordion__summary--padding: 0 0 0 1em;
+  --html-accordion__summary--fontSize: 1em;
+  --html-accordion__summary--lineHeight: 3;
+  --html-accordion__summary--fontWeight: 400;
+  --html-accordion__summary--backgroundColor: #eee;
+  --html-accordion__summary--cursor: pointer;
+
+  --html-accordion__content--padidng: 1em;
+
+}
+
+
+.html-accordion__details {
+  width: var(--html-accordion__details--width);
+  margin-bottom: var(--html-accordion__details--marginBottom);  
+  border: var(--html-accordion__details--border);
+}
+
+.html-accordion__summary {
+  padding: var(--html-accordion__summary--padding);
+  font-size: var(--html-accordion__summary--fontSize); 
+  font-weight: var(--html-accordion__summary--fontWeight);
+  line-height: var(--html-accordion__summary--lineHeight);
+  cursor: var(--html-accordion__summary--cursor);
+  background: var(--html-accordion__summary--backgroundColor);
+}
+
+.html-accordion__content {
+  padding: var(--html-accordion__content--padidng);
+}

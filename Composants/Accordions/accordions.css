@@ -1,0 +1,7 @@
+@import url('accordion-html.css');
+@import url('accordion-css.css');
+@import url('accordion-js.css');
+
+.incompatible {
+  color: red;
+}

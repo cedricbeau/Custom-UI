@@ -1,0 +1,99 @@
+/* ------------------------------ */
+/* ---------- Progress ---------- */
+/* ------------------------------ */
+:root {
+  --progress--height: 1.5rem;
+  --progress--fontSize: 1em;
+  --progress--backgroundColor: #d5d5d5;
+  --progress--borderRadius: 2px;
+
+  --progress__value--width: 100%;
+
+  --progress__value--backgroundImagePosition: top right;
+  --progress__value--backgroundImageColorFirst: #5399db;
+  --progress__value--backgroundImageColorSecond: #5153d6;
+
+  --progress__value--backgroundImage: 
+    linear-gradient(var(--progress__value--backgroundImagePosition),
+    var(--progress__value--backgroundImageColorFirst),
+    var(--progress__value--backgroundImageColorSecond));
+  --progress__value--backgroundImageMoz: 
+    -moz-linear-gradient(var(--progress__value--backgroundImagePosition),
+    var(--progress__value--backgroundImageColorFirst),
+    var(--progress__value--backgroundImageColorSecond));
+  --progress__value--backgroundImageWebkit: 
+    -webkit-linear-gradient(var(--progress__value--backgroundImagePosition),
+    var(--progress__value--backgroundImageColorFirst),
+    var(--progress__value--backgroundImageColorSecond));
+
+
+  --progress__bar--backgoundColor: #4b4b4b;
+  --progress__bar--backgroundColor--striped--color: 
+    rgba(255,255,255,0.15);
+  --progress__bar--backgroundColor--striped: 
+    linear-gradient(
+      45deg,
+      var(--progress__bar--backgroundColor--striped--color) 25%,
+      transparent 25%,
+      transparent 50%,
+      var(--progress__bar--backgroundColor--striped--color) 50%,
+      var(--progress__bar--backgroundColor--striped--color) 75%,
+      transparent 75%,
+      transparent
+    );
+}
+
+.progress {
+  display: flex;
+  height: var(--progress--height);
+  overflow: hidden;
+  font-size: var(--progress--fontSize);
+  background-color: var(--progress--backgroundColor);
+  border-radius: var(--progress--borderRadius);
+}
+
+progress.progress[value] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 0;
+  width: var(--progress__value--width);
+  background-color: var(--progress--backgroundColor);
+  background-image: var(--progress__value--backgroundImage);
+  border-radius: var(--progress--borderRadius);
+}
+
+progress.progress[value]::-moz-progress-bar {
+  background-image: var(--progress__value--backgroundImageMoz);
+}
+
+progress[value]::-webkit-progress-value {
+  background-image: var(--progress__value--backgroundImageWebkit);
+}
+
+.progress__bar {  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  background-color: var(--progress__bar--backgoundColor);
+  transition: width .6s ease;  
+}
+
+.progress__bar.is-striped {
+  background-image: var(--progress__bar--backgroundColor--striped);
+  background-size: var(--progress--height) var(--progress--height);
+}
+
+@keyframes progress-bar-stripes {
+  from { background-position: var(--progress--height) 0; }
+  to { background-position: 0 0; }
+}
+
+
+.progress__bar.is-animated {
+  -webkit-animation: progress-bar-stripes 1s linear infinite;
+          animation: progress-bar-stripes 1s linear infinite;
+}

@@ -1,0 +1,169 @@
+/* --------------------------- */
+/* ---------- Forms ---------- */
+/* --------------------------- */
+
+:root {
+
+  --field--margin: 1em 0;
+  --field--fontSize: 1em;
+  --field--fontWeight: 400;
+  --field--color: inherit;
+
+  --label--fontSize: calc(var(--field--fontSize) - 10%);
+  --label--fontWeight: 600;
+  --label--color: var(--field--color);
+  --label--textTransform: none;
+
+  --input--width: 100%;
+  --input--padding: 0.5em 1em;
+  --input--fontSize: var(--field--fontSize);
+  --input--fontWeight: var(--field--fontWeight);
+  --input--color: var(--field--color);
+  --input--backgroundColor: #fff;
+  --input--borderWidth: 1px;
+  --input--borderStyle: solid;
+  --input--borderColor: #e5e5e5;
+  --input--border: 
+    var(--input--borderWidth)
+    var(--input--borderStyle)
+    var(--input--borderColor);
+  --input--borderRadius: .25rem;
+
+  --submit--width: auto;
+  --submit--padding: .375rem .75rem;
+  --submit--color: #fff;
+  --submit--fontSize: var(--field--fontSize);
+  --submit--lineHeight: 1.5;
+  --submit--backgroundColor: #333;
+  --submit--backgroundColor--hover: #000;
+  --submit--borderWidth: 1px;
+  --submit--borderStyle: solid;
+  --submit--borderColor: #444;
+  --submit--border: 
+    var(--submit--borderWidth)
+    var(--submit--borderStyle)
+    var(--submit--borderColor);
+  --submit--borderRadius: .25rem;
+  --submit--transitionDuration: 0.4s;
+  
+}
+
+.fields {
+  display: flex;
+  margin: var(--field--margin);
+}
+
+.fields>.field {
+  margin: 0;
+}
+
+.fields>.field + .field {
+  margin-left: 1em;
+}
+
+/*
+** field
+*/
+.field {
+  display:flex;
+  flex-direction: column;
+  margin: var(--field--margin);
+}
+
+/*
+** field inline
+*/
+.field-inline {
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.field-inline>input[type="radio"],
+.field-inline>input[type="checkbox"] {
+  margin-right: .3125em; 
+}
+
+.field-inline>select {
+  margin-left: .625em;
+  font-size: var(--field--fontSize);
+}
+
+/*
+** label
+*/
+label {
+  font-size: var(--label--fontSize);  
+  color: var(--label--color);
+  text-transform: var(--label--textTransform);
+}
+
+.field:not(.field-inline)>label {
+  display: block;
+  margin: 0 0 .25em 0;
+  font-weight: var(--label--fontWeight);
+}
+
+/*
+** inputs & textarea
+*/
+.field>input[type="date"],
+.field>input[type="datetime-local"],
+.field>input[type="email"],
+.field>input[type="file"],
+.field>input[type="number"],
+.field>input[type="password"],
+.field>input[type="search"],
+.field>input[type="tel"],
+.field>input[type="text"],
+.field>input[type="time"],
+.field>input[type="url"],
+.field>textarea {
+  width: var(--input--width);
+  padding: var(--input--padding);
+  font-size: var(--input--fontSize);
+  font-weight: var(--input--fontWeight);
+  color: var(--input--color);
+  background-color: var(--input--backgroundColor);
+  border: var(--input--border);
+  border-radius: var(--input--borderRadius);
+}
+
+.field>input[type="date"]:focus,
+.field>input[type="datetime-local"]:focus,
+.field>input[type="email"]:focus,
+.field>input[type="file"]:focus,
+.field>input[type="number"]:focus,
+.field>input[type="password"]:focus,
+.field>input[type="search"]:focus,
+.field>input[type="tel"]:focus,
+.field>input[type="text"]:focus,
+.field>input[type="time"]:focus,
+.field>input[type="url"]:focus,
+.field>textarea:focus {
+  --input--borderColor: #85b7d9;
+  border-color: var(--input--borderColor);
+}
+
+/*
+** Submit
+*/
+.submit {
+  display: inline-block;
+  vertical-align: middle;
+  width: var(--submit--width);
+  padding: var(--submit--padding);
+  font-size: var(--submit--fontSize);
+  line-height: var(--submit--lineHeight);
+  color: var(--submit--color);
+  background-color: var(--submit--backgroundColor);
+  border: var(--submit--border);
+  border-radius: var(--submit--borderRadius);
+  cursor: pointer;
+  transition: background-color var(--submit--transitionDuration);
+}
+
+.submit:hover,
+.submit:focus {
+  background-color: var(--submit--backgroundColor--hover);
+}
+

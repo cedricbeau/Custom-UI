@@ -1,0 +1,80 @@
+<style>
+.grid{display:grid;grid-template-columns:repeat(3,150px);grid-template-rows:repeat(3,auto);grid-gap:10px;width:480px;padding:50px 0;margin:40px auto}.grid__cell:first-child,.grid__cell:nth-child(4){grid-column-start:2;grid-column-end:3}.grid__cell:first-child{grid-row-start:1;grid-row-end:2}.grid__cell:nth-child(2),.grid__cell:nth-child(3){grid-row-start:2;grid-row-end:3}.grid__cell:nth-child(2){grid-column-start:1;grid-column-end:2}.grid__cell:nth-child(3){grid-column-start:3;grid-column-end:4}.grid__cell:nth-child(4){grid-row-start:3;grid-row-end:4}.grid__cell{display:flex}.grid__cell>*{width:100%}
+</style>
+<section class="content__section section">
+  <div class="section__header">
+    <h3 class="section__title h2">Down</h3>
+  </div>
+  <div class="section__body">
+    <div class="grid">
+      <div class="grid__cell">
+        <button class="tooltip" tooltip-position="top" tooltip-animation="down" aria-label="Je suis en haut !" role="tooltip">Top</button>
+      </div>
+      <div class="grid__cell">
+        <button class="tooltip" tooltip-position="left" tooltip-animation="down" aria-label="Je suis à gauche !" role="tooltip">Left</button>
+      </div>
+      <div class="grid__cell">
+        <button class="tooltip" tooltip-position="right" tooltip-animation="down" aria-label="Je suis à droite !" role="tooltip">Right</button>
+      </div>
+      <div class="grid__cell">
+        <button class="tooltip" tooltip-position="bottom" tooltip-animation="down" aria-label="Je suis en bas !" role="tooltip">Bottom</button>
+      </div>
+    </div>
+  </div>
+  <div class="section_footer">
+    <div class="code">
+      <h4 class="code__title">Code HTML</h4>
+      <div class="code__clipboard">
+        <button class="btn-clipboard">Copier</button>
+      </div>
+      <textarea class="code_snippet">
+<button class="tooltip" tooltip-position="top" tooltip-animation="down" aria-label="Je suis en haut !" role="tooltip">Top</button>
+<button class="tooltip" tooltip-position="Left" tooltip-animation="down" aria-label="Je suis à gauche !" role="tooltip">Left</button>
+<button class="tooltip" tooltip-position="right" tooltip-animation="down" aria-label="Je suis à droite !" role="tooltip">Right</button>
+<button class="tooltip" tooltip-position="bottom" tooltip-animation="down" aria-label="Je suis en bas !" role="tooltip">Bottom</button>
+      </textarea>
+    </div>
+    <div class="section__footer__links">
+      <a href="Composants/Tooltips/tooltips.css" class="footer__link">Télécharger le fichier CSS</a>
+    </div>
+  </div>
+</section>
+
+<section class="content__section section">
+  <div class="section__header">
+    <h3 class="section__title h2">Up</h3>
+  </div>
+  <div class="section__body">
+    <div class="grid">
+      <div class="grid__cell">
+        <button class="tooltip" tooltip-position="top" tooltip-animation="up" aria-label="Je suis en haut !" role="tooltip">Top</button>
+      </div>
+      <div class="grid__cell">
+        <button class="tooltip" tooltip-position="left" tooltip-animation="up" aria-label="Je suis à gauche !" role="tooltip">Left</button>
+      </div>
+      <div class="grid__cell">
+        <button class="tooltip" tooltip-position="right" tooltip-animation="up" aria-label="Je suis à droite !" role="tooltip">Right</button>
+      </div>
+      <div class="grid__cell">
+        <button class="tooltip" tooltip-position="bottom" tooltip-animation="up" aria-label="Je suis en bas !" role="tooltip">Bottom</button>
+      </div>
+    </div>
+  </div>
+  <div class="section_footer">
+    <div class="code">
+      <h4 class="code__title">Code HTML</h4>
+      <div class="code__clipboard">
+        <button class="btn-clipboard">Copier</button>
+      </div>
+      <textarea class="code_snippet">
+<button class="tooltip" data-position="top" tooltip-animation="up" aria-label="Je suis en haut !" role="tooltip">Top</button>
+<button class="tooltip" data-position="Left" tooltip-animation="up" aria-label="Je suis à gauche !" role="tooltip">Left</button>
+<button class="tooltip" data-position="right" tooltip-animation="up" aria-label="Je suis à droite !" role="tooltip">Right</button>
+<button class="tooltip" data-position="bottom" tooltip-animation="up" aria-label="Je suis en bas !" role="tooltip">Bottom</button>
+      </textarea>
+    </div>
+    <div class="section__footer__links">
+      <a href="Composants/Tooltips/tooltips.css" class="footer__link">Télécharger le fichier CSS</a>
+    </div>
+  </div>
+</section>

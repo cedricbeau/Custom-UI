@@ -1,0 +1,93 @@
+/* ----------------------------------- */
+/* ---------- Accordion CSS ---------- */
+/* ----------------------------------- */
+:root {
+
+  --css-accordion__panel--width: 100%;
+  --css-accordion__panel--marginBottom: 5px;
+
+  --css-accordion--borderWidth: 1px;
+  --css-accordion--borderStyle: solid;
+  --css-accordion--borderColor: #e5e5e5;
+  --css-accordion--border:
+    var(--css-accordion--borderWidth)
+    var(--css-accordion--borderStyle)
+    var(--css-accordion--borderColor);
+
+  --css-accordion__label--padding: 0 0 0 1em;
+  --css-accordion__label--fontSize: 1em; 
+  --css-accordion__label--fontWeight: 400;
+  --css-accordion__label--lineHeight: 3;
+  --css-accordion__label--color: #333;
+  --css-accordion__label--backgroundColor: #eee;
+  --css-accordion__label--cursor: pointer;
+
+  --css-accordion__label--color--checked: #eee;
+  --css-accordion__label--backgroundColor--checked: #333;
+
+  --css-accordion--animationDuration: 0.4s;
+
+}
+.css-accordion__panel {
+  position: relative;
+  overflow: hidden;
+  width: var(--css-accordion__panel--width);
+  margin-bottom: var(--css-accordion__panel--marginBottom);  
+  border: var(--css-accordion--border);
+}
+
+.css-accordion__input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+.css-accordion__label {
+  position: relative;
+  display: block;
+  padding: var(--css-accordion__label--padding);
+  font-size: var(--css-accordion__label--fontSize);  
+  font-weight: var(--css-accordion__label--fontWeight);
+  line-height: var(--css-accordion__label--lineHeight);
+  color: var(--css-accordion__label--color);
+  background: var(--css-accordion__label--backgroundColor);
+  cursor: var(--css-accordion__label--cursor);
+}
+
+.css-accordion__content {
+  max-height: 0;  
+  overflow: hidden;
+  background: #fff;
+  -webkit-transition: max-height var(--css-accordion--animationDuration);
+          transition: max-height var(--css-accordion--animationDuration);
+}
+
+/* :checked */
+.css-accordion__input:checked + .css-accordion__label {
+  color: var(--css-accordion__label--color--checked);
+  background: var(--css-accordion__label--backgroundColor--checked);
+}
+
+.css-accordion__input:checked ~ .css-accordion__content {
+  max-height: 100vh;
+  padding: 1em;
+}
+
+/* Icon */
+.css-accordion__label::after {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+  width: 3em;
+  height: 3em;
+  content: "\25BC";
+  line-height: 3;
+  text-align: center;
+  -webkit-transition: transform var(--css-accordion--animationDuration);
+          transition: transform var(--css-accordion--animationDuration);
+}
+
+.css-accordion__input[type=radio]:checked + .css-accordion__label::after {
+  transform: rotateX(180deg);
+}

@@ -1,0 +1,140 @@
+/* -------------------------------- */
+/* ---------- Navigation ---------- */
+/* -------------------------------- */
+
+:root {
+  --nav__item--marginLeft: .625em;
+  --nav__item--backgroundColor: transparent;  
+  --nav__item--backgroundColor--hover: #e5e5e5;
+  --nav__item--borderRadius: .25rem;
+  --dropdown--minWidth: 7em;
+  --dropdown--backgroundColor--hover: #d1d1d1;
+  --nav__link--padding: 0.625em 1em;
+  --nav__link--color: #1E88E5;
+  --nav__link--backgroundColor--focus: #b1b1b1;
+  --transitionDuration: .4s;
+}
+
+.nav,
+.dropdown {
+  padding: 0;
+  list-style-type: none;
+}
+
+.nav__item {
+  border-radius: var(--nav__item--borderRadius);
+  transition: background-color var(--transitionDuration);
+}
+
+.nav__item:hover,
+.nav__item.is-active {
+  background-color: var(--nav__item--backgroundColor--hover);
+}
+
+.nav__link {
+  display: block;
+  padding: var(--nav__link--padding);
+  color: var(--nav__link--color);  
+  text-decoration: none;
+  border-radius: var(--nav__item--borderRadius);
+  transition: background-color var(--transitionDuration);
+}
+
+.nav__link:focus {
+  background-color: var(--nav__link--backgroundColor--focus);
+}
+
+/* 
+** Position
+*/
+
+.nav-horizontale {
+  display:flex;
+  flex-wrap: wrap;
+}
+
+.nav-horizontale>.nav__item + .nav__item{
+  margin-left: var(--nav__item--marginLeft);
+}
+
+.nav-align-center {
+  justify-content: center;
+}
+
+.nav-align-right {
+  justify-content: flex-end;
+}
+
+/* 
+** Dropdown
+*/
+
+.nav-with-dropdown .nav__item {
+  position: relative;
+  transition: background-color var(--transitionDuration);
+}
+
+.nav__item-with-dropdown,
+.nav__item-with-dropdown>.nav__link {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;  
+}
+
+.nav__item-with-dropdown>.nav__link {
+  position: relative;
+  padding-right: 2em;
+}
+.nav__item-with-dropdown>.nav__link:after {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%) rotate(90deg);
+  content: '\203A';
+  font-size: 120%;
+}
+
+.nav__item-with-dropdown:hover,
+.nav__item-with-dropdown .nav__item:hover {
+  background-color: var(--dropdown--backgroundColor--hover);  
+}
+
+.dropdown {
+  position: absolute;
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(0, 20%);
+  min-width: var(--dropdown--minWidth);
+  border-radius: 
+    0
+    var(--nav__item--borderRadius)
+    var(--nav__item--borderRadius)
+    var(--nav__item--borderRadius);
+  background-color: var(--nav__item--backgroundColor--hover);  
+  overflow: hidden;
+  transition: 
+    transform var(--transitionDuration),
+    opacity var(--transitionDuration);  
+}
+
+.nav__item:hover > .dropdown {  
+  visibility: visible;
+  pointer-events: all;
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.dropdown .nav__item,
+.dropdown .nav__link {
+  border-radius: 0;
+}
+
+
+
+
+
+
+
+
+
+

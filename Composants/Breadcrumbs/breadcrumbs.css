@@ -1,0 +1,38 @@
+/* -------------------------------- */
+/* ---------- Breadcrumb ---------- */
+/* -------------------------------- */
+
+:root {
+
+  --breadcrumb--padding: 1em;
+  --breadcrumb--backgroundColor: #ECEFF1;
+  --breadcrumb--color: #78909C;
+  --breadcrumb--borderRadius: 0;
+
+  --breadcrumb__item--paddingLeft: 1em;
+  --breadcrumb__item__before--paddingRight: .5em;
+}
+
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;  
+  list-style: none;
+  padding: var(--breadcrumb--padding);
+  background-color: var(--breadcrumb--backgroundColor);
+  border-radius: var(--breadcrumb--borderRadius);
+}
+
+.breadcrumb__item + .breadcrumb__item {
+  padding-left: var(--breadcrumb__item--paddingLeft);
+}
+
+.breadcrumb__item + .breadcrumb__item::before {
+  display: inline-block;
+  padding-right: var(--breadcrumb__item__before--paddingRight);
+  color: var(--breadcrumb--color);
+  content: "/";
+}
+
+.breadcrumb__item.is-active {
+  color: var(--breadcrumb--color);
+}

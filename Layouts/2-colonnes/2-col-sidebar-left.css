@@ -1,0 +1,72 @@
+/* --------------------------------------------- */
+/* ---------- 2 colonnes sidebar left ---------- */
+/* --------------------------------------------- */
+
+:root {
+  --page--width: 100%;
+  --grid--gap: 15px;
+
+  --page__header--color:rgba(255,255,255,0.5);
+  --page__main--color:rgba(00,00,00,0.8);
+  --page__sidebar--color:rgba(00,00,00,0.8);
+  --page__footer--color:rgba(255,255,255,0.5);
+
+  --page__header--backgroundColor:#263238;
+  --page__main--backgroundColor:#78909C;
+  --page__sidebar--backgroundColor:#CFD8DC;
+  --page__footer--backgroundColor:#263238;
+}
+
+.page {
+  display:grid;
+  grid-template-columns: repeat(12,1fr);  
+  grid-gap: var(--grid--gap);
+  width: var(--page--width);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.page__header,
+.page__footer,
+.page__sidebar,
+.page__main {  
+  grid-column: 1 / span 12;
+}
+
+.page__header {  
+  color: var(--page__header--color);
+  background: var(--page__header--backgroundColor);
+}
+
+.page__footer {  
+  color: var(--page__footer--color);
+  background: var(--page__footer--backgroundColor);
+}
+
+.page__main {
+  color: var(--page__main--color);
+  background:var(--page__main--backgroundColor);
+}
+
+.page__sidebar {
+  color: var(--page__sidebar--color);
+  background: var(--page__sidebar--backgroundColor);
+}
+
+@media only screen and (min-width: 768px) {
+  .page-sidebar-left {
+    grid-template-areas: 
+      "h h h h h h h h h h h h"
+      "s s s m m m m m m m m m"
+      "f f f f f f f f f f f f"
+  }
+
+  .page-sidebar-left .page__sidebar {
+    grid-area: s;
+  }
+  
+  .page-sidebar-left .page__main {
+    grid-area: m;
+  } 
+    
+}

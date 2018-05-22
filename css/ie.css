@@ -1,0 +1,16 @@
+/* Internet Explorer */
+#ie {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  padding: 3em 1em;
+  margin: 0;
+  font-size: 2em;
+  color: red;
+  text-align: center;
+  background: #fff;
+  box-shadow: 0 4px 20px rgba(00,00,00,0.5);
+}
