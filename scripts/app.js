@@ -2,78 +2,78 @@
 const composants = [
   {
     title: 'Accordions',
-    href: '/Composants/Accordions/index.html'
+    href: '/Custom-UI//Composants/Accordions/index.html'
   },
   {
     title: 'Alerts',
-    href: '/Composants/Alerts/index.html'
+    href: '/Custom-UI/Composants/Alerts/index.html'
   },
   {
     title: 'Breadcrumbs',
-    href: '/Composants/Breadcrumbs/index.html'
+    href: '/Custom-UI/Composants/Breadcrumbs/index.html'
   },
   {
     title: 'Buttons',
-    href: '/Composants/buttons/index.html'
+    href: '/Custom-UI/Composants/buttons/index.html'
   },
   {
     title: 'Cards',
-    href: '/Composants/Cards/index.html'
+    href: '/Custom-UI/Composants/Cards/index.html'
   },
   {
     title: 'Forms',
-    href: '/Composants/Forms/index.html'
+    href: '/Custom-UI/Composants/Forms/index.html'
   },
   {
     title: 'Modals',
-    href: '/Composants/Modals/index.html'
+    href: '/Custom-UI/Composants/Modals/index.html'
   },
   {
     title: 'Navigation',
-    href: '/Composants/Navigation/index.html'
+    href: '/Custom-UI/Composants/Navigation/index.html'
   },
   {
     title: 'Notifications',
-    href: '/Composants/Notifications/index.html'
+    href: '/Custom-UI/Composants/Notifications/index.html'
   },
   {
     title: 'Paginations',
-    href: '/Composants/Paginations/index.html'
+    href: '/Custom-UI/Composants/Paginations/index.html'
   },
   {
     title: 'Progress',
-    href: '/Composants/Progress/index.html'
+    href: '/Custom-UI/Composants/Progress/index.html'
   },
   {
     title: 'Slider',
-    href: '/Composants/Slider/index.html'
+    href: '/Custom-UI/Composants/Slider/index.html'
   },
   {
     title: 'Tables',
-    href: '/Composants/Tables/index.html'
+    href: '/Custom-UI/Composants/Tables/index.html'
   },
   {
     title: 'Tabs',
-    href: '/Composants/Tabs/index.html'
+    href: '/Custom-UI/Composants/Tabs/index.html'
   },
   {
     title: 'Tooltips',
-    href: '/Composants/Tooltips/index.html'
+    href: '/Custom-UI/Composants/Tooltips/index.html'
   }
 ]
 //Layouts
 const layouts = [
   {
     title: 'Grid',
-    href: '/Layouts/Grid/index.html'
+    href: '/Custom-UI/Layouts/Grid/index.html'
   },
   {
     title: '2-colonnes',
-    href: '/Layouts/2-colonnes/index.html'
+    href: '/Custom-UI/Layouts/2-colonnes/index.html'
   },
   {
     title: '3-colonnes',
-    href: '/Layouts/3-colonnes/index.html'
+    href: '/Custom-UI/Layouts/3-colonnes/index.html'
   }
 ]
 
