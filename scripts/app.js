@@ -14,7 +14,7 @@ const composants = [
   },
   {
     title: 'Buttons',
-    href: '/Custom-UI/Composants/buttons/index.html'
+    href: '/Custom-UI/Composants/Buttons/index.html'
   },
   {
     title: 'Cards',
