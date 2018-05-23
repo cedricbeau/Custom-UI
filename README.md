@@ -1,4 +1,4 @@
-# Custom-UI
+# Custom UI
 
 Custom UI est une bibliothèque de composants et de layouts. Chaque composant, ainsi que chaque layout est indépendant des autres.
 
@@ -20,5 +20,5 @@ Ils ne sont pas non plus responsives.
 Les composants ont été adaptés à partir de [Bootstrap](https://getbootstrap.com/) et de [Semantic UI](https://semantic-ui.com/).
 
 ## Open source:
-Cette bibliothèque est un projet personnel open source, ce qui signifie que vous êtes libres de l'utiliser comme bon vous semble et de l'adapter selon vos besoins.
+Custom UI est un projet personnel open source, ce qui signifie que vous êtes libres de l'utiliser comme bon vous semble et de l'adapter selon vos besoins.
 
