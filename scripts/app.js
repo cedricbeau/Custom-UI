@@ -3,7 +3,7 @@ console.log(location.href)
 const composants = [
   {
     title: 'Accordions',
-    href: '/Custom-UI/Composants/Accordions/index.html'
+    href: 'Custom-UI/Composants/Accordions/index.html'
   },
   {
     title: 'Alerts',
