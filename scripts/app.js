@@ -153,6 +153,7 @@ function navigation() {
     let oldText = targetUrlSplit[6]
     console.log(oldText)
     let newText = targetText.toLowerCase()
+    console.log(newText)
 
     //customCSS
     let newTargetUrlCSS = targetHref.replace(oldText, newText + '.css')
@@ -164,6 +165,7 @@ function navigation() {
     let customScriptContainer = document.getElementById('customScriptContainer')
     let customScript = document.createElement('script')
     let newTargetUrlJS = targetHref.replace(oldText, newText + '.js')
+    console.log(newTargetUrlJS)
     customScript.setAttribute('src', newTargetUrlJS);
     customScriptContainer.innerHTML = ''
     customScriptContainer.appendChild(customScript);
