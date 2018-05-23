@@ -4,7 +4,7 @@ console.log(constantHref)
 const composants = [
   {
     title: 'Accordions',
-    href: constantHref+'/Composants/Accordions/index.html'
+    href: constantHref+'Composants/Accordions/index.html'
   },
   {
     title: 'Alerts',
