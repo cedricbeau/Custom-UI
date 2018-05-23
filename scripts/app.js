@@ -1,3 +1,4 @@
+console.log(location.href)
 //Composants
 const composants = [
   {
