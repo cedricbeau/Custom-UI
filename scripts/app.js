@@ -150,7 +150,7 @@ function navigation() {
     //Récupère le dernier mot du lien cliqué
     let targetUrlSplit = targetHref.split('/')
     console.log(targetUrlSplit)
-    let oldText = targetUrlSplit[5]
+    let oldText = targetUrlSplit[6]
     console.log(oldText)
     let newText = targetText.toLowerCase()
 
