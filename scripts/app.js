@@ -149,11 +149,14 @@ function navigation() {
 
     //Récupère le dernier mot du lien cliqué
     let targetUrlSplit = targetHref.split('/')
+    console.log(targetUrlSplit)
     let oldText = targetUrlSplit[5]
+    console.log(oldText)
     let newText = targetText.toLowerCase()
 
     //customCSS
     let newTargetUrlCSS = targetHref.replace(oldText, newText + '.css')
+    console.log(newTargetUrlCSS)
     let dynamicLink = document.querySelector('#customCSS')
     dynamicLink.setAttribute('href', newTargetUrlCSS)
 
