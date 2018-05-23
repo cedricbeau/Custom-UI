@@ -1,9 +1,10 @@
-console.log(location.href)
+let constantHref = location.href
+console.log(constantHref)
 //Composants
 const composants = [
   {
     title: 'Accordions',
-    href: '/Custom-UI/Composants/Accordions/index.html'
+    href: constantHref+'/Composants/Accordions/index.html'
   },
   {
     title: 'Alerts',
