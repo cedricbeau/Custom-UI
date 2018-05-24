@@ -152,14 +152,13 @@ function navigation() {
     //Récupère le dernier mot du lien cliqué
     let targetUrlSplit = targetHref.split('/')
     console.log(targetUrlSplit)
-    let oldText = targetUrlSplit[6]
-    console.log(oldText)
-    let newText = targetText.toLowerCase()
-    console.log(newText)
+    let wordIndex = targetUrlSplit.length - 1
+    console.log(wordIndex)
+    let oldText = targetUrlSplit[wordIndex]    
+    let newText = targetText.toLowerCase()    
 
     //customCSS
     let newTargetUrlCSS = targetHref.replace(oldText, newText + '.css')
-    console.log(newTargetUrlCSS)
     let dynamicLink = document.querySelector('#customCSS')
     dynamicLink.setAttribute('href', newTargetUrlCSS)
 
@@ -167,7 +166,6 @@ function navigation() {
     let customScriptContainer = document.getElementById('customScriptContainer')
     let customScript = document.createElement('script')
     let newTargetUrlJS = targetHref.replace(oldText, newText + '.js')
-    console.log(newTargetUrlJS)
     customScript.setAttribute('src', newTargetUrlJS);
     customScriptContainer.innerHTML = ''
     customScriptContainer.appendChild(customScript);
