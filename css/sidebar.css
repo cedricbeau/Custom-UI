@@ -59,7 +59,7 @@
 
 .sidebar footer a {
   color: currentColor;
-  text-decoration: underline;
+  text-decoration: none;
   -webkit-transition: color .4s;
   transition: color .4s;
 }
@@ -68,4 +68,17 @@
 .sidebar footer a:focus {
   color: #f2f2f2;
 }
+
+.sidebar  footer svg {
+  display: inline-block;
+  vertical-align: middle;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+  -webkit-transition: fill .4s;
+  				transition: fill .4s;
+}
+
+
+
 /* Sidebar: End */
