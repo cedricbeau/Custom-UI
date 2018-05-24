@@ -1,7 +1,5 @@
 # Custom UI
 
-[https://cedricbeau.github.io/Custom-UI/](https://cedricbeau.github.io/Custom-UI/)
-
 Custom UI est une bibliothèque de composants et de layouts. Chaque composant, ainsi que chaque layout est indépendant des autres.
 
 Pour chaque composant et chaque layout, vous avez:
@@ -10,6 +8,10 @@ Pour chaque composant et chaque layout, vous avez:
 * le code HTML à copier-coller
 * la feuille de style à télécharger
 * un fichier Javascript quand c'est nécessaire
+
+## Demo
+
+[https://cedricbeau.github.io/Custom-UI/](https://cedricbeau.github.io/Custom-UI/)
 
 ## Prérequis:
 Avant d'utiliser un composant, il est nécessaire de télécharger [normalize.css](https://necolas.github.io/normalize.css/) et de l'appeler dans la balise head.
