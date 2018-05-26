@@ -15,8 +15,6 @@ Pour chaque composant et chaque layout, vous avez:
 
 ![Capture d'écran de Custom UI]( https://github.com/cedricbeau/Custom-UI/blob/master/screen-custom-ui-01.png "Capture d'écran de Custom UI")
 
-![Capture d'écran de Custom UI]( https://github.com/cedricbeau/Custom-UI/blob/master/screen-custom-ui-02.png "Capture d'écran de Custom UI")
-
 ## Prérequis:
 Avant d'utiliser un composant, il est nécessaire de télécharger [normalize.css](https://necolas.github.io/normalize.css/) et de l'appeler dans la balise head.
 
