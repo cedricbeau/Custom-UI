@@ -10,10 +10,6 @@
   background-color:#333;
 }
 
-.sidebar header a {
-  color: currentColor;
-}
-
 /* Navigation: Ready */
 #navigation {
   max-height: calc(100vh - 140px);
