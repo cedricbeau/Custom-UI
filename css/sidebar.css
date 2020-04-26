@@ -3,7 +3,7 @@
   position: fixed;
   top:0;
   left:0;
-  bottom:0;  
+  bottom:0;
   width:15em;
   padding: 0 1.25em;
   color: #fff;
@@ -34,7 +34,7 @@
 }
 
 .sidebar .nav__link:hover{
-  color:rgba(255,255,255,0.8);  
+  color:rgba(255,255,255,0.8);
 }
 
 .sidebar .nav__link:focus {
@@ -48,8 +48,10 @@
 /* Navigation: End */
 
 .sidebar footer {
+  display: flex;
+  justify-content: space-between;
   margin: 2em 0;
-  font-size: 0.875em;
+  font-size: 0.75em;
   color: rgba(255,255,255,0.35);
 }
 
@@ -65,14 +67,9 @@
   color: #f2f2f2;
 }
 
-.sidebar  footer svg {
+.sidebar  footer [class*="icon-"] {
   display: inline-block;
   vertical-align: middle;
-  stroke-width: 0;
-  stroke: currentColor;
-  fill: currentColor;
-  -webkit-transition: fill .4s;
-  				transition: fill .4s;
 }
 
 

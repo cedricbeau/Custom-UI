@@ -13,7 +13,7 @@ Pour chaque composant et chaque layout, vous avez:
 
 [https://cedricbeau.github.io/Custom-UI/](https://cedricbeau.github.io/Custom-UI/)
 
-![Capture d'écran de Custom UI]( https://github.com/cedricbeau/Custom-UI/blob/master/screen-custom-ui-01.png "Capture d'écran de Custom UI")
+![Capture d'écran de Custom UI]( https://github.com/cedricbeau/Custom-UI/blob/master/custom-ui.png "Capture d'écran de Custom UI")
 
 ## Prérequis:
 Avant d'utiliser un composant, il est nécessaire de télécharger [normalize.css](https://necolas.github.io/normalize.css/) et de l'appeler dans la balise head.
@@ -27,4 +27,12 @@ Les composants ont été adaptés à partir de [Bootstrap](https://getbootstrap.
 
 ## Open source:
 Custom UI est un projet personnel open source, ce qui signifie que vous êtes libres de l'utiliser comme bon vous semble et de l'adapter selon vos besoins.
+
+## Modifications
+
+**26/04/2020**
+
+* Ajout de la font icon Icomoon
+* Maj du footer
+* Maj de la capture d'écran
 
